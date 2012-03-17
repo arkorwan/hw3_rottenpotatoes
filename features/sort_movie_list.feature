@@ -20,10 +20,22 @@ Background: movies have been added to database
   | Chicken Run             | G      | 21-Jun-2000  |
 
   And I am on the RottenPotatoes home page
+  And I check the following ratings: G, PG, PG-13, R
+  And I submit ratings
 
 Scenario: sort movies alphabetically
-  # your steps here
-
+  When I sort movies by title
+  Then I should see "2001: A Space Odyssey" before "Aladdin"
+  And I should see "Aladdin" before "Amelie"
+  And I should see "Chicken Run" before "Chocolat"
+  And I should see "Raiders of the Lost Ark" before "The Incredibles"
+  And I should see "The Incredibles" before "The Terminator"
+  
 Scenario: sort movies in increasing order of release date
-  # your steps here
+  When I sort movies by release_date
+  Then I should see "2001: A Space Odyssey" before "Aladdin"
+  And I should see "When Harry Met Sally" before "The Help"
+  And I should see "Chicken Run" before "Chocolat"
+  And I should see "Raiders of the Lost Ark" before "The Incredibles"
+  And I should see "The Terminator" before "The Incredibles"
 

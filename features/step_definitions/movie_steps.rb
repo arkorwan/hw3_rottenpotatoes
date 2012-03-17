@@ -11,9 +11,8 @@ end
 #   on the same page
 
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
-  #  ensure that that e1 occurs before e2.
-  #  page.content  is the entire content of the page as a string.
-  assert false, "Unimplmemented"
+  titles = page.all(:xpath, "//table[@id='movies']/tbody/tr/td[1]").map{|movie| movie.text}
+  assert titles.index(e2.strip) > titles.index(e1.strip)
 end
 
 # Make it easier to express checking or unchecking several boxes at once
@@ -21,7 +20,39 @@ end
 #  "When I check the following ratings: G"
 
 When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
-  # HINT: use String#split to split up the rating_list, then
-  #   iterate over the ratings and reuse the "When I check..." or
-  #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
+  ratings = rating_list.split(',')
+  if uncheck
+    ratings.each{|rating| uncheck "ratings_#{rating.strip}" }
+  else
+    ratings.each{|rating| check "ratings_#{rating.strip}" }
+  end
+end
+
+When /I submit ratings/ do
+  click_button "ratings_submit" 
+end
+
+When /I sort movies by (.*)/ do |sort_by|
+  click_link "#{sort_by}_header"
+end
+
+Then /I should( not)? see the following movies: (.*)/ do |hide, movie_list|
+  titles = page.all(:xpath, "//table[@id='movies']/tbody/tr/td[1]").map{|movie| movie.text}
+  movies = movie_list.split(',')
+  if hide
+    movies.each{|movie| assert !titles.include?(movie.strip)}
+  else
+    movies.each{|movie| assert titles.include?(movie.strip)}
+  end
+end
+
+Then /I should see all of the movies/ do
+  titles_from_db = Movie.all.map{|movie| movie[:title]}.sort
+  titles_from_page = page.all(:xpath, "//table[@id='movies']/tbody/tr/td[1]").map{|movie| movie.text}.sort  
+  assert_equal titles_from_db, titles_from_page
+end
+
+Then /I should not see any movies/ do
+  movies = page.all(:xpath, "//table[@id='movies']/tbody/tr")
+  assert movies.empty?
 end
