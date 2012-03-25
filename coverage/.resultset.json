@@ -1,21 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/saasbook/Desktop/hw3/app/controllers/application_controller.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/saasbook/Desktop/hw3/app/helpers/application_helper.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Desktop/hw3/app/helpers/movies_helper.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/helpers/movies_helper.rb": [
         1,
         null,
         null
       ],
-      "/home/saasbook/Desktop/hw3/app/controllers/movies_controller.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/controllers/movies_controller.rb": [
         1,
         null,
         1,
@@ -96,7 +96,7 @@
         null,
         null
       ],
-      "/home/saasbook/Desktop/hw3/app/models/movie.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/models/movie.rb": [
         1,
         1,
         0,
@@ -104,25 +104,25 @@
         null
       ]
     },
-    "timestamp": 1332672661
+    "timestamp": 1332679317
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/saasbook/Desktop/hw3/app/controllers/application_controller.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/saasbook/Desktop/hw3/app/helpers/application_helper.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Desktop/hw3/app/helpers/movies_helper.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/helpers/movies_helper.rb": [
         1,
         null,
         null
       ],
-      "/home/saasbook/Desktop/hw3/app/controllers/movies_controller.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/controllers/movies_controller.rb": [
         1,
         null,
         1,
@@ -203,7 +203,7 @@
         null,
         null
       ],
-      "/home/saasbook/Desktop/hw3/app/models/movie.rb": [
+      "/home/saasbook/Desktop/hw4/hw3_rottenpotatoes/app/models/movie.rb": [
         1,
         1,
         19,
@@ -211,6 +211,6 @@
         null
       ]
     },
-    "timestamp": 1332672771
+    "timestamp": 1332679394
   }
 }
