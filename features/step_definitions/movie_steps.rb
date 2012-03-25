@@ -56,3 +56,8 @@ Then /I should not see any movies/ do
   movies = page.all(:xpath, "//table[@id='movies']/tbody/tr")
   assert movies.empty?
 end
+
+Then /the director of "(.*)" should be "(.+)"/ do |movie_title, movie_director|
+  director = Movie.find_by_title(movie_title).director
+  assert_equal movie_director, director
+end

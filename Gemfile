@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-
+gem 'simplecov'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -14,6 +14,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-rails'
 end
 group :production do
 #  gem 'pg'
@@ -38,3 +39,4 @@ gem 'jquery-rails'
 
 # To use debugger
 gem 'haml'
+
